@@ -1,0 +1,13 @@
+select salary 
+from 
+(select 
+    d.name,
+    e.salary, 
+    dense_rank() over (partition by d.name order by e.salary desc) as salary_rank   
+    
+    from employees e 
+    join departments d 
+    on e.department_id = d.id) com
+
+    where com.name = 'engineering'
+    and com.salary_rank=2
