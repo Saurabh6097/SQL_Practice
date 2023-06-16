@@ -6,7 +6,7 @@ from
     dense_rank() over (partition by d.name order by e.salary desc) as salary_rank   
     
     from employees e 
-    join departments d 
+    join departments d
     on e.department_id = d.id) com
 
     where com.name = 'engineering'
