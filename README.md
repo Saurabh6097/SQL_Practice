@@ -5,5 +5,5 @@ Question 1: % employees with salary>100k for each dept
 Question 2: Second highest salary for engineering department
 https://www.interviewquery.com/questions/2nd-highest-salary
 
-Question 2 :trips-and-users
+Question 3 :trips-and-users
 https://leetcode.com/problems/trips-and-users/
