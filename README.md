@@ -7,3 +7,6 @@ https://www.interviewquery.com/questions/2nd-highest-salary
 
 Question 3 :trips-and-users
 https://leetcode.com/problems/trips-and-users/
+
+Question 4 :trips-and-users
+https://leetcode.com/problems/employees-with-missing-information/description/
