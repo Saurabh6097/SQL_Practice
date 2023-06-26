@@ -10,3 +10,6 @@ https://leetcode.com/problems/trips-and-users/
 
 Question 4 :trips-and-users
 https://leetcode.com/problems/employees-with-missing-information/description/
+
+Question 5 :The Latest Login in 2020
+https://leetcode.com/problems/the-latest-login-in-2020/
