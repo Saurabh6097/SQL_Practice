@@ -1,0 +1,19 @@
+
+select employee_id,
+        (case when (employee_id %  2 =1 and substr(name,1,1) != 'M') then salary else 0 end) as bonus 
+
+        from Employees
+        order by employee_id
+
+####### Alternate solutions
+select employee_id, 
+if(employee_id % 2 = 0 OR name LIKE 'M%', 0, salary) as bonus 
+from Employees;
+
+####
+SELECT employee_id, salary AS bonus FROM Employees
+WHERE MOD (employee_id, 2) = 1 AND lower(name) NOT LIKE 'm%'
+UNION
+SELECT employee_id, salary*0 AS bonus FROM Employees
+WHERE MOD (employee_id, 2) = 0 OR lower(name) LIKE 'm%'
+ORDER by employee_id ASC;
