@@ -16,3 +16,6 @@ https://leetcode.com/problems/the-latest-login-in-2020/
 
 Question 6 :Calculate Special Bonus
 https://leetcode.com/problems/calculate-special-bonus/
+
+Question 7 :Rearrange Products Table
+https://leetcode.com/problems/rearrange-products-table/
