@@ -13,3 +13,6 @@ https://leetcode.com/problems/employees-with-missing-information/description/
 
 Question 5 :The Latest Login in 2020
 https://leetcode.com/problems/the-latest-login-in-2020/
+
+Question 6 :Calculate Special Bonus
+https://leetcode.com/problems/calculate-special-bonus/
