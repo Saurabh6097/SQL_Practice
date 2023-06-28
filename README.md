@@ -22,3 +22,6 @@ https://leetcode.com/problems/rearrange-products-table/
 
 Question 8 : Find Followers Count
 https://leetcode.com/problems/find-followers-count/
+
+Question 9 : Daily Leads and Partners
+https://leetcode.com/problems/daily-leads-and-partners/
