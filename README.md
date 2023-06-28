@@ -19,3 +19,6 @@ https://leetcode.com/problems/calculate-special-bonus/
 
 Question 7 :Rearrange Products Table
 https://leetcode.com/problems/rearrange-products-table/
+
+Question 8 : Find Followers Count
+https://leetcode.com/problems/find-followers-count/
