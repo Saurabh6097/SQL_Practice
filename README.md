@@ -25,3 +25,6 @@ https://leetcode.com/problems/find-followers-count/
 
 Question 9 : Daily Leads and Partners
 https://leetcode.com/problems/daily-leads-and-partners/
+
+Question 10 : Tree and node
+https://leetcode.com/problems/tree-node/
