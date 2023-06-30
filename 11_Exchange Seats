@@ -5,3 +5,34 @@ select id,
      when id %2 = 0 then lag(student,1) over()
      else lead(student,1) over() end as student
 from Seat
+
+#### Alternate solution
+with cte as (
+    select
+        *,
+        lag(student) over(order by id asc) as previous_student,
+        lead(student) over(order by id asc) as next_student,row_number()over(order by id) as n
+    from Seat
+)
+select 
+    id,
+    case
+        when n % 2 <> 0 and next_student is null then student
+        when n % 2 <> 0 then next_student
+        else previous_student
+    end as student
+from cte
+
+
+select id,
+case when id%2 = 0 then (lag(student) over (order by id))
+else ifnull(lead(student) over (order by id),student)
+END as "student"
+from Seat
+
+select
+case when mod(id,2)=0 then id-1
+when mod(id,2)=1 and id+1 not in (select id from seat) then id
+else id+1 end as id,
+student
+from seat order by id
