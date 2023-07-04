@@ -1,0 +1,21 @@
+with returning as (
+                select distinct user_id,
+                id,
+                lag(id) over (partition by user_id order by created_at) as prev_id,
+                created_at,
+                lag(created_at) over (partition by user_id order by created_at) prev_date
+                
+            from amazon_transactions
+                )
+                select distinct user_id
+                
+                                from returning
+                where DATEDIFF(created_at, prev_date) <= 7
+
+###Alternate solutions
+with cte as(select user_id,created_at,lead(created_at)over(partition by user_id order by created_at) as Next_dt 
+from amazon_transactions)
+
+select distinct user_id   
+from cte
+where DATEDIFF(created_at,next_dt)<=7
