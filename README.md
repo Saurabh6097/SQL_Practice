@@ -34,3 +34,7 @@ https://leetcode.com/problems/exchange-seats/
 
 Question 12 : Manager of the Largest Department
 https://platform.stratascratch.com/coding/2060-manager-of-the-largest-department?code_type=3
+
+Question 14 : Highest Order Details
+https://platform.stratascratch.com/coding/9915-highest-cost-orders?code_type=3
+
