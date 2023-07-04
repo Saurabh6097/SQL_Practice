@@ -31,3 +31,6 @@ https://leetcode.com/problems/tree-node/
 
 Question 11 : Exchange Seat
 https://leetcode.com/problems/exchange-seats/
+
+Question 12 : Manager of the Largest Department
+https://platform.stratascratch.com/coding/2060-manager-of-the-largest-department?code_type=3
