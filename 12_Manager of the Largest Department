@@ -1,0 +1,24 @@
+with large  as (select department_id, 
+       count(distinct id) as dept_count 
+from az_employees 
+group by department_id
+order by dept_count desc
+limit 1) 
+
+select first_name,
+       last_name,
+       position
+    from az_employees
+    where department_id in (select distinct department_id from large)
+    and position like '%manager%'
+
+###Alternate solution
+with cte as(select * from (select department_id,count(distinct id) as num_employees,rank()over(order by count(distinct id) desc ) as rnk1
+from az_employees
+group by department_id) tbl
+where rnk1=1)
+ select a.*
+ from cte c
+ inner join az_employees a
+ on a.department_id=c.department_id
+where a.position ='Manager'
