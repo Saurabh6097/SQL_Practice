@@ -1,0 +1,32 @@
+with cte1 as( select invoiceno,
+                     sum(quantity * unitprice) over(partition by invoiceno) as invoice_value,
+                     month(invoicedate) as month1
+                
+                from online_retail
+),
+cte2 as(select * from (select invoiceno,
+
+                row_number() over(partition by month1 order by invoice_value desc) as rnk,
+                invoice_value,
+                month1 as invoice_month
+                
+                from cte1 ) tbl
+                where rnk=1)
+                select * from (select b.invoice_month,
+                       a.description,
+                       a.quantity,
+                       a.unitprice,
+                       row_number() over(partition by b.invoice_month order by a.quantity desc) as rnk
+                       
+                       
+                       from online_retail a
+                       inner join cte2 b 
+                       on a.invoiceno = b.invoiceno
+                ) tbl1 
+                where rnk=1
+
+####Alternate solution 
+select invoicedate,description,unitprice*quantity as Invoice_amt from 
+(select *,rank()over(partition by Month(invoicedate) order by (unitprice*quantity) desc) as rnk
+from online_retail)tbl
+where rnk=1
